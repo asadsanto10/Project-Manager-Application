@@ -3,13 +3,8 @@
 import React from 'react';
 import Footer from '../components/dashboard/Footer';
 import Header from '../components/dashboard/Header';
-import Backlog from '../components/dashboard/ProjectsBoard/Backlog/Backlog';
-import Blocked from '../components/dashboard/ProjectsBoard/Blocked/Blocked';
-import Doing from '../components/dashboard/ProjectsBoard/Doing/Doing';
-import Done from '../components/dashboard/ProjectsBoard/Done/Done';
+import ProjectBoard from '../components/dashboard/ProjectsBoard/ProjectBoard';
 import ProjectBoardHeading from '../components/dashboard/ProjectsBoard/ProjectBoardHeading';
-import Ready from '../components/dashboard/ProjectsBoard/Ready/Ready';
-import Review from '../components/dashboard/ProjectsBoard/Review/Review';
 
 const Projects = () => {
   return (
@@ -17,12 +12,7 @@ const Projects = () => {
       <Header />
       <ProjectBoardHeading />
       <div className="flex flex-grow px-10 mt-4 space-x-6 overflow-auto">
-        <Backlog />
-        <Ready />
-        <Doing />
-        <Review />
-        <Blocked />
-        <Done />
+        <ProjectBoard />
 
         <div className="flex-shrink-0 w-6" />
       </div>

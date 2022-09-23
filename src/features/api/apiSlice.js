@@ -23,6 +23,6 @@ export const apiSlice = createApi({
     }
     return result;
   },
-  tagTypes: [],
+  tagTypes: ['getTeams'],
   endpoints: () => ({}),
 });
