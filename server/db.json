@@ -63,7 +63,7 @@
       "teamColor": "#2fbee1",
       "teamDesc": "this is ui team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": ["asad.santo.20@gmail.com"],
       "date": 1663869094719
     },
     {
@@ -71,6 +71,7 @@
       "teamName": "Frontend",
       "teamColor": "#d7b330",
       "teamDesc": "This is frontend team",
+      "creator": "santo.meridian@gmail.com",
       "assign": ["santo.meridian@gmail.com"],
       "date": 1663869158973
     },
@@ -95,14 +96,44 @@
   ],
   "projects": [
     {
-      "id": 87341,
+      "id": 31231,
+      "teamName": "CSS",
+      "teamColor": "#AD9DFF",
+      "projectTitle": "this is first css project",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664126540647
+    },
+    {
+      "id": 31913,
       "teamName": "dev",
       "teamColor": "#FF5733",
-      "projectTitle": "This is dev team",
+      "projectTitle": "this is fisrt dev team",
       "creator": "santo.meridian@gmail.com",
-      "avatarUrl": "",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
       "stage": "backlog",
-      "date": 1663867112862
+      "date": 1664126664503
+    },
+    {
+      "id": 19705,
+      "teamName": "Frontend",
+      "teamColor": "#d7b330",
+      "projectTitle": "make css",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664128636217
+    },
+    {
+      "id": 98046,
+      "teamName": "Frontend",
+      "teamColor": "#d7b330",
+      "projectTitle": "js fixed",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664129050098
     }
   ]
 }

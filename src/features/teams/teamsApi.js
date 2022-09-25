@@ -10,6 +10,13 @@ export const teamApi = apiSlice.injectEndpoints({
       }),
       providesTags: ['getTeams'],
     }),
+
+    getTeamName: builder.query({
+      query: (teamName) => ({
+        url: `/teams?teamName_like=${teamName}`,
+        method: 'GET',
+      }),
+    }),
     addNewTeam: builder.mutation({
       query: (data) => ({
         url: '/teams',
@@ -55,4 +62,9 @@ export const teamApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useGetTeamsQuery, useAddNewTeamMutation, useUpdateTeamAssignMutation } = teamApi;
+export const {
+  useGetTeamsQuery,
+  useAddNewTeamMutation,
+  useUpdateTeamAssignMutation,
+  useGetTeamNameQuery,
+} = teamApi;
