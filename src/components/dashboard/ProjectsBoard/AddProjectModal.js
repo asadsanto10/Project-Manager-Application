@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useAddNewProjectMutation } from '../../../features/projects/projectsApi';
 import { useGetTeamNameQuery } from '../../../features/teams/teamsApi';
+import deboundeHandler from '../../../utils/debouncs';
 import Error from '../../ui/Error';
 
 const AddProjectModal = ({ open, control }) => {
@@ -27,16 +28,6 @@ const AddProjectModal = ({ open, control }) => {
       setAssignd(false);
     }
   }, [mathcTeam, user.email]);
-
-  const deboundeHandler = (fn, delay) => {
-    let timeOut;
-    return (...args) => {
-      clearTimeout(timeOut);
-      timeOut = setTimeout(() => {
-        fn(...args);
-      }, delay);
-    };
-  };
 
   const doCheck = (e) => {
     // setSuccess(false);

@@ -1,7 +1,9 @@
 import moment from 'moment';
-import React from 'react';
+import React, { useRef, useState } from 'react';
+
 import { useDrag } from 'react-dnd';
 import { useSelector } from 'react-redux';
+import { useDeleteProjectMutation } from '../../../features/projects/projectsApi';
 
 const ProjectTaskItem = ({
   id,
@@ -12,8 +14,14 @@ const ProjectTaskItem = ({
   avatarUrl,
   stage,
   date,
+  titleMatch,
 }) => {
+  const ref = useRef();
   const { user } = useSelector((state) => state.auth) || {};
+  const [deleteProject] = useDeleteProjectMutation();
+
+  const [show, setShow] = useState(false);
+
   const [{ isDragging }, dragItem] = useDrag(() => ({
     type: 'projectCard',
     item: { id, stage },
@@ -30,29 +38,55 @@ const ProjectTaskItem = ({
     }),
   }));
 
+  // delete project
+  const handelDelete = () => {
+    if (user.email === creator) {
+      deleteProject({ id, email: user.email });
+    }
+  };
   return (
     <div
       ref={dragItem}
       style={{
         opacity: isDragging ? 0.5 : 1,
       }}
-      className="relative flex flex-col items-start p-4 mt-3 bg-white rounded-lg cursor-pointer bg-opacity-90 group hover:bg-opacity-100"
+      className={` ${
+        titleMatch && 'border-2 border-teal-500'
+      } relative flex flex-col items-start p-4 mt-3 bg-white rounded-lg cursor-pointer bg-opacity-90 group hover:bg-opacity-100`}
       draggable="true"
     >
-      {stage === 'backlog' && user.email === creator && (
-        <button
-          type="button"
-          className="absolute top-0 right-0 flex items-center justify-center hidden w-5 h-5 mt-3 mr-2 text-gray-500 rounded hover:bg-gray-200 hover:text-gray-700 group-hover:flex"
-        >
-          <svg
-            className="w-4 h-4 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+      {stage === 'backlog' && (
+        <>
+          <button
+            onClick={() => setShow((prevState) => !prevState)}
+            type="button"
+            className="absolute top-0 right-0 flex items-center justify-center hidden w-5 h-5 mt-3 mr-2 text-gray-500 rounded hover:bg-gray-200 hover:text-gray-700 group-hover:flex"
           >
-            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-          </svg>
-        </button>
+            <svg
+              className="w-4 h-4 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+            </svg>
+          </button>
+          <div className={show ? '' : 'hidden'} ref={ref}>
+            {creator === user.email ? (
+              <button
+                onClick={handelDelete}
+                type="button"
+                className="absolute top-10 right-2 flex items-center justify-center  bg-slate-200 text-slate-700 hover:bg-gray-200 hover:text-gray-700 rounded-md px-2"
+              >
+                Delete
+              </button>
+            ) : (
+              <div className="absolute top-10 right-2 flex items-center justify-center  bg-slate-200 text-slate-700 hover:bg-gray-200 hover:text-gray-700 rounded-md px-2">
+                Not Allowed
+              </div>
+            )}
+          </div>
+        </>
       )}
       <span
         style={{ background: teamColor, color: '#fff' }}

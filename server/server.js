@@ -11,26 +11,26 @@ const port = process.env.PORT || 9000;
 const io = require('socket.io')(server);
 
 // response middleware
-router.render = (req, res) => {
-  const { path } = req;
-  const { method } = req;
+// router.render = (req, res) => {
+//   const { path } = req;
+//   const { method } = req;
 
-  if (path.includes('/conversations') && (method === 'POST' || method === 'PATCH')) {
-    // emit socket event
-    io.emit('conversation', {
-      data: res.locals.data,
-      type: method === 'POST' ? 'conversationAdd' : 'conversationEdit',
-    });
-  }
-  if (path.includes('/messages') && (method === 'POST' || method === 'PATCH')) {
-    // emit socket event
-    io.emit('message', {
-      data: res.locals.data,
-    });
-  }
+//   if (path.includes('/conversations') && (method === 'POST' || method === 'PATCH')) {
+//     // emit socket event
+//     io.emit('conversation', {
+//       data: res.locals.data,
+//       type: method === 'POST' ? 'conversationAdd' : 'conversationEdit',
+//     });
+//   }
+//   if (path.includes('/messages') && (method === 'POST' || method === 'PATCH')) {
+//     // emit socket event
+//     io.emit('message', {
+//       data: res.locals.data,
+//     });
+//   }
 
-  res.json(res.locals.data);
-};
+//   res.json(res.locals.data);
+// };
 // Bind the router db to the app
 app.db = router.db;
 global.io = io;

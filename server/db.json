@@ -12,28 +12,28 @@
       "password": "$2a$10$hGnPfmjOjqWO/01bnrKXP.GpIRYEy.Kj.X/QGLO6VhQbTxR1F8Ld2",
       "name": "santo",
       "id": 2,
-      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4"
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png"
     },
     {
       "email": "borsha@gmail.com",
       "password": "$2a$10$hGnPfmjOjqWO/01bnrKXP.GpIRYEy.Kj.X/QGLO6VhQbTxR1F8Ld2",
       "name": "borsha",
       "id": 3,
-      "avatarUrl": "https://github.com/asadsanto10/imagehost/blob/master/customer-1.png"
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-1.png"
     },
     {
       "email": "test1@gmail.com",
       "password": "$2a$10$hGnPfmjOjqWO/01bnrKXP.GpIRYEy.Kj.X/QGLO6VhQbTxR1F8Ld2",
       "name": "Test 1",
       "id": 4,
-      "avatarUrl": "https://github.com/asadsanto10/imagehost/blob/master/customer-2.png"
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png"
     },
     {
       "email": "test2@gmail.com",
       "password": "$2a$10$hGnPfmjOjqWO/01bnrKXP.GpIRYEy.Kj.X/QGLO6VhQbTxR1F8Ld2",
       "name": "Test 2",
       "id": 5,
-      "avatarUrl": "https://github.com/asadsanto10/imagehost/blob/master/customer-3.png"
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-3.png"
     },
     {
       "email": "test3@gmail.com",
@@ -63,7 +63,9 @@
       "teamColor": "#2fbee1",
       "teamDesc": "this is ui team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["asad.santo.20@gmail.com"],
+      "assign": [
+        "asad.santo.20@gmail.com"
+      ],
       "date": 1663869094719
     },
     {
@@ -72,16 +74,20 @@
       "teamColor": "#d7b330",
       "teamDesc": "This is frontend team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "date": 1663869158973
     },
     {
       "id": 56955,
       "teamName": "React",
-      "teamColor": "#AD9DFF",
+      "teamColor": "#0065AB",
       "teamDesc": "This is react team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "date": 1663869211290
     },
     {
@@ -90,8 +96,23 @@
       "teamColor": "#AD9DFF",
       "teamDesc": "This is css team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "date": 1663874265121
+    },
+    {
+      "id": 22299,
+      "teamName": "Node Js",
+      "teamColor": "#A50737",
+      "teamDesc": "Node js team\n",
+      "creator": "santo.meridian@gmail.com",
+      "assign": [
+        "santo.meridian@gmail.com",
+        "asad.santo.20@gmail.com",
+        "test1@gmail.com"
+      ],
+      "date": 1664214664694
     }
   ],
   "projects": [
@@ -100,14 +121,14 @@
       "teamName": "CSS",
       "teamColor": "#AD9DFF",
       "projectTitle": "this is first css project",
-      "creator": "santo.meridian@gmail.com",
+      "creator": "asad.santo.20@gmail.com",
       "assign": [
         "santo.meridian@gmail.com",
         "asad.santo.20@gmail.com",
         "test1@gmail.com"
       ],
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "ready",
+      "stage": "done",
       "date": 1664126540647
     },
     {
@@ -116,9 +137,11 @@
       "teamColor": "#FF5733",
       "projectTitle": "this is fisrt dev team",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "backlog",
+      "stage": "doing",
       "date": 1664126664503
     },
     {
@@ -127,9 +150,11 @@
       "teamColor": "#d7b330",
       "projectTitle": "make css",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "blocked",
+      "stage": "done",
       "date": 1664128636217
     },
     {
@@ -138,7 +163,9 @@
       "teamColor": "#d7b330",
       "projectTitle": "js fixed",
       "creator": "santo.meridian@gmail.com",
-      "assign": ["santo.meridian@gmail.com"],
+      "assign": [
+        "santo.meridian@gmail.com"
+      ],
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
       "stage": "review",
       "date": 1664129050098
@@ -146,21 +173,21 @@
     {
       "id": 2009,
       "teamName": "react",
-      "teamColor": "#AD9DFF",
+      "teamColor": "#0065AB",
       "projectTitle": "react test",
       "creator": "santo.meridian@gmail.com",
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "backlog",
+      "stage": "done",
       "date": 1664175809574
     },
     {
       "id": 34634,
       "teamName": "react",
-      "teamColor": "#AD9DFF",
+      "teamColor": "#0065AB",
       "projectTitle": "react test-1",
       "creator": "santo.meridian@gmail.com",
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "doing",
+      "stage": "review",
       "date": 1664175814693
     },
     {
@@ -170,7 +197,7 @@
       "projectTitle": "new task",
       "creator": "santo.meridian@gmail.com",
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "ready",
+      "stage": "doing",
       "date": 1664190357759
     },
     {
@@ -186,12 +213,122 @@
     {
       "id": 7130,
       "teamName": "react",
-      "teamColor": "#AD9DFF",
+      "teamColor": "#0065AB",
       "projectTitle": "test react -2",
       "creator": "santo.meridian@gmail.com",
       "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
-      "stage": "blocked",
+      "stage": "review",
       "date": 1664190373229
+    },
+    {
+      "id": 34517,
+      "teamName": "css",
+      "teamColor": "#AD9DFF",
+      "projectTitle": "css code fix",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "ready",
+      "date": 1664202277033
+    },
+    {
+      "id": 43383,
+      "teamName": "Frontend",
+      "teamColor": "#d7b330",
+      "projectTitle": "fix bug",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "blocked",
+      "date": 1664202302918
+    },
+    {
+      "id": 86399,
+      "teamName": "ui",
+      "teamColor": "#2fbee1",
+      "projectTitle": "final ui",
+      "creator": "asad.santo.20@gmail.com",
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png",
+      "stage": "backlog",
+      "date": 1664203592920
+    },
+    {
+      "id": 84736,
+      "teamName": "CSS",
+      "teamColor": "#AD9DFF",
+      "projectTitle": "fix css color",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "blocked",
+      "date": 1664203767346
+    },
+    {
+      "id": 97058,
+      "teamName": "dev",
+      "teamColor": "#FF5733",
+      "projectTitle": "dev team task assign",
+      "creator": "test1@gmail.com",
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png",
+      "stage": "doing",
+      "date": 1664206718189
+    },
+    {
+      "id": 58457,
+      "teamName": "React",
+      "teamColor": "#0065AB",
+      "projectTitle": "Fix bug",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664207039530
+    },
+    {
+      "id": 4114,
+      "teamName": "Node Js",
+      "teamColor": "#A50737",
+      "projectTitle": "Fist project initial",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664214730242
+    },
+    {
+      "id": 18166,
+      "teamName": "Node Js",
+      "teamColor": "#A50737",
+      "projectTitle": "Router config",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "ready",
+      "date": 1664214749531
+    },
+    {
+      "id": 57182,
+      "teamName": "Node Js",
+      "teamColor": "#A50737",
+      "projectTitle": "render ejs",
+      "creator": "asad.santo.20@gmail.com",
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png",
+      "stage": "done",
+      "date": 1664214792815
+    },
+    {
+      "id": 47661,
+      "teamName": "UI",
+      "teamColor": "#2fbee1",
+      "projectTitle": "Make new UI design for LWS",
+      "creator": "asad.santo.20@gmail.com",
+      "avatarUrl": "https://asadsanto10.github.io/imagehost/customer-2.png",
+      "stage": "backlog",
+      "date": 1664214838694
+    },
+    {
+      "id": 93311,
+      "teamName": "Frontend",
+      "teamColor": "#d7b330",
+      "projectTitle": "JS fix",
+      "creator": "santo.meridian@gmail.com",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/40804158?v=4",
+      "stage": "backlog",
+      "date": 1664215730335
     }
   ]
 }

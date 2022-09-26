@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useUpdateTeamAssignMutation } from '../../../features/teams/teamsApi';
 import { useGetUserQuery } from '../../../features/users/usersApi';
+import deboundeHandler from '../../../utils/debouncs';
 import validateEmailCheck from '../../../utils/validEmailCheck';
 import Error from '../../ui/Error';
 
@@ -54,16 +55,6 @@ const AssignTeamModal = ({ id, teamName, teamColor, assign, open, control, refet
   setTimeout(() => {
     setSuccess(false);
   }, 10000);
-
-  const deboundeHandler = (fn, delay) => {
-    let timeOut;
-    return (...args) => {
-      clearTimeout(timeOut);
-      timeOut = setTimeout(() => {
-        fn(...args);
-      }, delay);
-    };
-  };
 
   const doCheck = (e) => {
     if (validateEmailCheck(e.target.value)) {

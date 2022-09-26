@@ -13,12 +13,23 @@ const ProjectBoardItems = ({ projectsData: data, stage }) => {
   };
   const { user } = useSelector((state) => state.auth) || {};
   const [projectsData, setProjectData] = useState([]);
+  const { search } = useSelector((state) => state.projects) || {};
+  // console.log(search);
 
   useEffect(() => {
     if (data) {
-      setProjectData(data);
+      const filterSearch = data.map((project) => {
+        if (search) {
+          return project.projectTitle.toLowerCase().match(search.toLowerCase())
+            ? { ...project, titleMatch: true }
+            : { ...project, titleMatch: false };
+        }
+        return project;
+      });
+
+      setProjectData(filterSearch);
     }
-  }, [data]);
+  }, [data, search]);
 
   const [updateProject] = useUpdateProjectMutation();
 
@@ -41,7 +52,7 @@ const ProjectBoardItems = ({ projectsData: data, stage }) => {
     }),
   }));
 
-  // console.log(isOver);
+  // console.log(projectsData);
 
   return (
     <div

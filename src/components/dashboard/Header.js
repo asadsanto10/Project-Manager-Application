@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useMatch } from 'react-router-dom';
 import logoImage from '../../assets/images/lws-logo-dark.svg';
 import { userLoggedOut } from '../../features/auth/authSlice';
+import { search } from '../../features/projects/projectSlice';
+import deboundeHandler from '../../utils/debouncs';
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth) || {};
@@ -11,14 +13,40 @@ const Header = () => {
   const handelShowHide = () => {
     setShow((prevState) => !prevState);
   };
+  const match = useMatch('/projects');
 
   const handelLogout = () => {
     dispatch(userLoggedOut());
     localStorage.removeItem('auth');
   };
+
+  // search
+
+  const doSearch = (e) => {
+    if (e.target.value !== '') {
+      dispatch(search(e.target.value));
+    } else {
+      dispatch(search(''));
+    }
+  };
+
+  const handelSearch = deboundeHandler(doSearch, 500);
   return (
     <div className="flex items-center flex-shrink-0 w-full h-16 px-10 bg-white bg-opacity-75">
       <img src={logoImage} alt="logo" className="h-10 w-10" />
+      {/* search */}
+      {match && (
+        <div className="border border-slate-200 flex items-center w-96 bg-gray-50 h-10 rounded-lg text-sm ring-emerald-200">
+          <input
+            onChange={handelSearch}
+            className="outline-none border-none rounded-sm bg-gray-50 h-full w-full"
+            type="search"
+            name="search"
+            placeholder="Search"
+          />
+          {/* <img className="inline h-6 cursor-pointer" src={searchImage} alt="Search" /> */}
+        </div>
+      )}
       <div className="ml-10">
         <NavLink
           to="/projects"
