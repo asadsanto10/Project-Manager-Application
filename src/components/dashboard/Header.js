@@ -18,6 +18,7 @@ const Header = () => {
   const handelLogout = () => {
     dispatch(userLoggedOut());
     localStorage.removeItem('auth');
+    dispatch(search(''));
   };
 
   // search
