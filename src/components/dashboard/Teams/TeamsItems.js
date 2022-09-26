@@ -17,11 +17,11 @@ const TeamsItems = () => {
   // console.log(teamsData);
   let content;
 
-  if (isLoading) content = <li className="mt-2 text-center">Loading...</li>;
+  if (isLoading) content = <h3 className="mt-2 text-center">Loading...</h3>;
 
   if (!isLoading && isError) content = <Error message={error} />;
   if (!isLoading && !isError && teamsData?.length === 0)
-    content = <li className="mt-2 text-center">No Conversation Found</li>;
+    content = <h3 className="mt-2 text-center">No Teams Found</h3>;
 
   if (!isLoading && !isError && teamsData?.length > 0) {
     content = teamsData.map((teamData) => (

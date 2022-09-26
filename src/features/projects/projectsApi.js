@@ -4,10 +4,13 @@ import { apiSlice } from '../api/apiSlice';
 export const projectsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getProjects: builder.query({
-      query: () => ({
-        url: `/projects?creator=santo.meridian@gmail.com&_sort=date&_order=desc}`,
-        method: 'GET',
-      }),
+      query: (email) => {
+        // console.log(email);
+        return {
+          url: `/projects?creator_like=${email}&_sort=date&_order=desc`,
+          method: 'GET',
+        };
+      },
     }),
     addNewProject: builder.mutation({
       query: (data) => ({
@@ -15,23 +18,56 @@ export const projectsApi = apiSlice.injectEndpoints({
         method: 'POST',
         body: data,
       }),
-      // async onQueryStarted(args, { queryFulfilled, dispatch }) {
-      //   const { data } = (await queryFulfilled) || {};
-      //   // optimistic cache update start
-      //   const result = dispatch(
-      //     apiSlice.util.updateQueryData('getTeams', args.creator, (draft) => {
-      //       draft.push(data);
-      //     })
-      //   );
-      //   // optimistic cache update end
-      //   try {
-      //     //
-      //   } catch (error) {
-      //     result.undo();
-      //   }
-      // },
+      async onQueryStarted(args, { queryFulfilled, dispatch }) {
+        const { data } = (await queryFulfilled) || {};
+        // console.log(data);
+        // console.log(args);
+        // optimistic cache update start
+        const result = dispatch(
+          apiSlice.util.updateQueryData('getProjects', args.creator, (draft) => {
+            draft.unshift(data);
+          })
+        );
+        // optimistic cache update end
+        try {
+          //
+        } catch (error) {
+          result.undo();
+        }
+      },
+    }),
+    updateProject: builder.mutation({
+      query: ({ id, data }) => {
+        // console.log({ id, data });
+        return {
+          url: `/projects/${id}`,
+          method: 'PATCH',
+          body: data,
+        };
+      },
+      async onQueryStarted(args, { queryFulfilled, dispatch }) {
+        const { data } = (await queryFulfilled) || {};
+        // console.log(data);
+        // console.log(args);
+        // optimistic cache update start
+        const result = dispatch(
+          apiSlice.util.updateQueryData('getProjects', args.email, (draft) => {
+            // eslint-disable-next-line no-return-assign
+            return (draft = draft.map((project) =>
+              project.id === args.id ? { ...project, stage: args.data.stage } : project
+            ));
+          })
+        );
+        // optimistic cache update end
+        try {
+          //
+        } catch (error) {
+          result.undo();
+        }
+      },
     }),
   }),
 });
 
-export const { useAddNewProjectMutation, useGetProjectsQuery } = projectsApi;
+export const { useAddNewProjectMutation, useGetProjectsQuery, useUpdateProjectMutation } =
+  projectsApi;
